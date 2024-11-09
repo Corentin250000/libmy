@@ -5,7 +5,7 @@
 ** task10
 */
 
-#include "day06.h"
+#include "my.h"
 
 char *my_strcapitalize(char *str)
 {

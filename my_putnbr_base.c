@@ -5,7 +5,7 @@
 ** task18
 */
 
-#include "day06.h"
+#include "my.h"
 
 void my_putstr(char const *str)
 {

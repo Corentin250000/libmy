@@ -5,7 +5,7 @@
 ** conversion letter
 */
 
-#include "day06.h"
+#include "my.h"
 
 char character_to_put(int res_mod)
 {

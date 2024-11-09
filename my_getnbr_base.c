@@ -5,7 +5,7 @@
 ** task19
 */
 
-#include "day06.h"
+#include "my.h"
 #include <limits.h>
 
 int nbr_is_negative(char const *str)

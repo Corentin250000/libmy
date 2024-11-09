@@ -5,7 +5,7 @@
 ** task08
 */
 
-#include "day06.h"
+#include "my.h"
 
 char *my_strupcase(char *str)
 {

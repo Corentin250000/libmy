@@ -5,7 +5,7 @@
 ** task05
 */
 
-#include "day06.h"
+#include "my.h"
 
 char *my_strstr(char *str, char const *to_find)
 {

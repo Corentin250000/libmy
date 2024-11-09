@@ -5,9 +5,6 @@
 ** task04
 */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include "day08.h"
 #include "my.h"
 
 int is_alphanum(char c)

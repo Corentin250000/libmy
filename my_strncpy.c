@@ -5,7 +5,7 @@
 ** task02
 */
 
-#include "day06.h"
+#include "my.h"
 
 char *my_strncpy(char *dest, char const *src, int n)
 {

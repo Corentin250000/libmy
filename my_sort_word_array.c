@@ -5,8 +5,7 @@
 ** day10
 */
 
-#include "include/my.h"
-#include <unistd.h>
+#include "my.h"
 
 void swap_str(char *a, char *b)
 {
@@ -16,7 +15,7 @@ void swap_str(char *a, char *b)
     *b = temp;
 }
 
-int verify_sort(char **tab)
+int verify_sort_char(char **tab)
 {
     for (int i = 1; tab[i] != NULL; i++) {
         if (my_strcmp(tab[i - 1], tab[i]) > 0)
@@ -27,7 +26,7 @@ int verify_sort(char **tab)
 
 int my_sort_word_array(char **tab)
 {
-    for (int i = 1; !verify_sort(tab); i++) {
+    for (int i = 1; !verify_sort_char(tab); i++) {
         if (tab[i] == NULL)
             i = 1;
         if (my_strcmp(tab[i - 1], tab[i]) > 0)

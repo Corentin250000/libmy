@@ -5,7 +5,7 @@
 ** task03
 */
 
-//#include "day04.h"
+#include "my.h"
 
 int my_strlen(char const *str)
 {

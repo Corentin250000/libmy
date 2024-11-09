@@ -5,7 +5,7 @@
 ** task05
 */
 
-//#include "day04.h"
+#include "my.h"
 #include <limits.h>
 
 int is_negative(char const *str)

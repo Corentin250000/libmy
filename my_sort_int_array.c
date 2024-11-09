@@ -5,15 +5,7 @@
 ** task06
 */
 
-//#include "day04.h"
-
-void my_swap2(int *a, int *b)
-{
-    int temp = *a;
-
-    *a = *b;
-    *b = temp;
-}
+#include "my.h"
 
 int verify_sort(int *array, int size)
 {
@@ -30,6 +22,6 @@ void my_sort_int_array(int *array, int size)
         if (i >= size)
             i = 1;
         if (array[i - 1] > array[i])
-            my_swap2(&array[i - 1], &array[i]);
+            my_swap(&array[i - 1], &array[i]);
     }
 }

@@ -5,6 +5,8 @@
 ** task03
 */
 
+#include "my.h"
+
 int my_compute_power_it(int nb, int p)
 {
     int result = nb;

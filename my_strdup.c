@@ -5,9 +5,7 @@
 ** task01
 */
 
-#include "day08.h"
 #include "my.h"
-#include <stdlib.h>
 
 char *my_strdup(char const *src)
 {

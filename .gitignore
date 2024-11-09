@@ -1,0 +1,8 @@
+
+*.gcda
+*.gcno
+*.o
+unit_tests
+coding-style-reports.log
+.vscode
+*.a

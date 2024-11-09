@@ -5,8 +5,6 @@
 ** task05
 */
 
-#include <stdlib.h>
-#include "day08.h"
 #include "my.h"
 
 int max_power(int nb, int base)
@@ -16,28 +14,6 @@ int max_power(int nb, int base)
     if (nb < 0)
         nb *= -1;
     for (; my_compute_power_it(base, result) <= nb; result++);
-    return result;
-}
-
-static char character_to_put(int res_mod)
-{
-    char result = 0;
-
-    if (res_mod >= 10)
-        result = 65 + (res_mod - 10);
-    else if (res_mod < 10)
-        result = 48 + res_mod;
-    return result;
-}
-
-int value_to_add(int base, char letter, int power_max)
-{
-    int result = 0;
-
-    if (letter >= '0' && letter <= '9')
-        result = (letter - 48) * my_compute_power_it(base, power_max);
-    else if (letter >= 'A' && letter <= 'F')
-        result = (letter - 55) * my_compute_power_it(base, power_max);
     return result;
 }
 
