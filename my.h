@@ -16,7 +16,8 @@ int value_to_add(int base, char letter, int power_max);
 int max_power(int nb, int base);
 char *base10_to_base(int nb, int base);
 int return_to_base10(char const *nb, int base);
-char *convert_base(char const *nbr, char const *base_from, char const *base_to);
+char *convert_base(char const *nbr, char const *base_from,
+    char const *base_to);
 int my_compute_factorial_it(int nb);
 int my_compute_power_it(int nb, int p);
 int nbr_is_negative(char const *str);
