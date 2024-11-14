@@ -7,6 +7,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 #ifndef MY_H_
     #define MY_H_
@@ -29,10 +30,10 @@ int nb_digits_str(char const *str);
 int n_power_ten(int nb_digits);
 int verify_overflow(long long nb_before_verification, int is_neg);
 int my_getnbr(char const *str);
-void special_case(void);
+int special_case(void);
 int my_put_nbr(int nb);
-void my_putchar(char c);
-void my_putstr(char const *str);
+int my_putchar(char c);
+int my_putstr(char const *str);
 int power(int nb, int p);
 int my_putnbr_base(int nbr, char const *base);
 void my_swap(int *a, int *b);
@@ -58,4 +59,7 @@ int my_strlen(char const *str);
 char *my_strdup(char const *src);
 char *my_strcpy(char *dest, char const *src);
 int my_strcmp(char const *s1, char const *s2);
+int verify_format(const char *format);
+int select_print(va_list ap, char option);
+int mini_printf(const char *format, ...);
 #endif

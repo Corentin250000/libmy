@@ -28,6 +28,8 @@ SRC	=	conversion_letter.c	\
 		my_strstr.c	\
 		my_strupcase.c	\
 		my_swap.c	\
+		select_print_function.c	\
+		mini_printf.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
