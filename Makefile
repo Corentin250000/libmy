@@ -30,6 +30,7 @@ SRC	=	conversion_letter.c	\
 		my_swap.c	\
 		select_print_function.c	\
 		mini_printf.c	\
+		my_strncpy.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
