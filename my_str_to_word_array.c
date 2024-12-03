@@ -7,65 +7,70 @@
 
 #include "my.h"
 
-int is_alphanum(char c)
+int is_authorized(char c, char const *authorized)
 {
-    if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') ||
-        (c >= 'a' && c <= 'z'))
-        return 1;
-    return 0;
-}
+    int present = 0;
 
-int nb_words(char const *str)
-{
-    int nb = 0;
-    int is_word = 0;
-
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (is_alphanum(str[i]) && !is_word) {
-            nb++;
-            is_word++;
-        }
-        if (!is_alphanum(str[i]))
-            is_word = 0;
+    for (int i = 0; authorized[i] != '\0'; i++) {
+        if (c == authorized[i])
+            present = 1;
     }
-    return nb;
+    return present;
 }
 
-int size_word(char const *str, int index)
+int size_not_word(char const *str, int index, char const *authorized)
+{
+    for (; !is_authorized(str[index], authorized)
+        && str[index] != '\0'; index++);
+    return index;
+}
+
+int nb_word(char const *str, char const *authorized)
+{
+    int nbr = 0;
+    int alphanum = 1;
+    int i = 0;
+
+    for (; str[i] != '\0'; i++) {
+        if (i != 0 && !is_authorized(str[i - 1], authorized))
+            continue;
+        alphanum += is_authorized(str[i], authorized) ? 1 : - alphanum;
+        if (str[i + 1] == '\0')
+            alphanum = 0;
+        if (alphanum == 0)
+            nbr++;
+    }
+    return nbr;
+}
+
+int size_word(char const *str, int index, char const *authorized)
 {
     int size = 0;
+    int i = index;
 
-    for (int i = index; is_alphanum(str[i]); i++)
+    for (; is_authorized(str[i], authorized); i++)
         size++;
     return size;
 }
 
-int size_not_word(char const *str, int index)
+char **my_str_to_word_array(char const *str, char const *authorized)
 {
-    int size = 0;
-
-    for (int i = index; str[i] != '\0' && !is_alphanum(str[i]); i++)
-        size++;
-    return size;
-}
-
-char **my_str_to_word_array(char const *str)
-{
-    char **array = malloc(sizeof(char *) * (nb_words(str) + sizeof(NULL)));
-    int index = 0;
+    int word_number = nb_word(str, authorized);
+    int index_str = 0;
     int word_size = 0;
-    int j = 0;
+    int index_word = 0;
+    char **result = malloc(sizeof(char *) * (word_number + 1 + sizeof(NULL)));
 
-    for (int i = 0; i < nb_words(str); i++) {
-        index += size_not_word(str, index);
-        array[i] = malloc(sizeof(char) * (size_word(str, index) + 1));
-        word_size = size_word(str, index);
-        for (j = 0; j < word_size; j++) {
-            array[i][j] = str[index];
-            index++;
+    for (int i = 0; i < word_number; i++) {
+        index_str = size_not_word(str, index_str, authorized);
+        word_size = size_word(str, index_str, authorized);
+        result[i] = malloc(sizeof(char) * (word_size + 1));
+        for (index_word = 0; index_word < word_size; index_word++) {
+            result[i][index_word] = str[index_str];
+            index_str++;
         }
-        array[i][j] = '\0';
+        result[i][index_word] = '\0';
     }
-    array[nb_words(str)] = NULL;
-    return array;
+    result[word_number] = NULL;
+    return result;
 }

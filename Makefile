@@ -15,6 +15,7 @@ SRC	=	conversion_letter.c	\
 		my_putchar.c	\
 		my_putnbr_base.c	\
 		my_sort_int_array.c	\
+		my_sort_word_array.c	\
 		my_str_to_word_array.c	\
 		my_strcapitalize.c	\
 		my_strcat.c	\

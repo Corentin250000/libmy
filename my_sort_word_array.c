@@ -7,9 +7,9 @@
 
 #include "my.h"
 
-void swap_str(char *a, char *b)
+void swap_str(char **a, char **b)
 {
-    char temp = *a;
+    char *temp = *a;
 
     *a = *b;
     *b = temp;
