@@ -27,18 +27,12 @@ int size_not_word(char const *str, int index, char const *authorized)
 
 int nb_word(char const *str, char const *authorized)
 {
-    int nbr = 0;
-    int alphanum = 1;
-    int i = 0;
-
-    for (; str[i] != '\0'; i++) {
-        if (i != 0 && !is_authorized(str[i - 1], authorized))
-            continue;
-        alphanum += is_authorized(str[i], authorized) ? 1 : - alphanum;
-        if (str[i + 1] == '\0')
-            alphanum = 0;
-        if (alphanum == 0)
-            nbr++;
+    int nbr = is_authorized(str[0], authorized);
+    
+    for (int i = 1; str[i] != '\0'; ++i) {
+        if (!is_authorized(str[i - 1], authorized) &&
+            is_authorized(str[i], authorized))
+                nbr++;
     }
     return nbr;
 }
