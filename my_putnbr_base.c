@@ -26,7 +26,7 @@ int power(int nb, int p)
     return result;
 }
 
-int max_power(int nb, int base)
+int max_power_putnbr(int nb, int base)
 {
     int result = 0;
 
@@ -41,12 +41,12 @@ int my_putnbr_base(int nbr, char const *base)
     int base_int = my_getnbr(base);
     int res_mod = 0;
     int temp = nbr < 0 ? - nbr : nbr;
-    char str[max_power(nbr, base_int) + 1];
+    char str[max_power_putnbr(nbr, base_int) + 1];
 
-    str[max_power(nbr, base_int)] = '\0';
+    str[max_power_putnbr(nbr, base_int)] = '\0';
     if (nbr < 0)
         my_putchar('-');
-    for (int i = max_power(nbr, base_int) - 1; i >= 0; i--) {
+    for (int i = max_power_putnbr(nbr, base_int) - 1; i >= 0; i--) {
         res_mod = temp % base_int;
         str[i] = character_to_put(res_mod);
         temp /= base_int;

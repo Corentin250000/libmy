@@ -25,6 +25,8 @@ char *base10_to_base(int nb, int base)
     int size = max_power(nb, base) + negative;
     char *result = malloc(sizeof(char) * (size + 1));
 
+    if (!result)
+        return NULL;
     if (negative)
         result[0] = '-';
     for (int i = size - 1; i >= 0; i--) {
