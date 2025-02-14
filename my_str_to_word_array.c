@@ -7,6 +7,9 @@
 
 #include "my.h"
 
+/*
+Return 0 if the character is unauthorized
+*/
 int is_unauthorized(char c, char const *unauthorized)
 {
     int present = 1;
@@ -42,7 +45,7 @@ int size_word(char const *str, int index, char const *unauthorized)
     int size = 0;
     int i = index;
 
-    for (; is_unauthorized(str[i], unauthorized); i++)
+    for (; is_unauthorized(str[i], unauthorized) && str[i] != '\0'; i++)
         size++;
     return size;
 }
