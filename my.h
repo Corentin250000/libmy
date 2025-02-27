@@ -62,5 +62,6 @@ int my_strcmp(char const *s1, char const *s2);
 int verify_format(const char *format);
 int select_print(va_list ap, char option);
 int mini_printf(const char *format, ...);
+void *my_realloc(void *ptr, size_t new_size, size_t previous_size, int *error);
 
 #endif

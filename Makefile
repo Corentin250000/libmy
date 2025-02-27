@@ -32,6 +32,7 @@ SRC	=	conversion_letter.c	\
 		select_print_function.c	\
 		mini_printf.c	\
 		my_strncpy.c	\
+		my_realloc.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
