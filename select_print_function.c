@@ -7,11 +7,17 @@
 
 #include "my.h"
 
-/*
-Select the correct function to print current argument between:
-- my_put_nbr
-- my_putstr
-- my_putchar
+/**
+* @brief Select the correct function to print current argument between:
+*
+* - my_put_nbr
+*
+* - my_putstr
+*
+* - my_putchar
+* @param ap list of arguments (...)
+* @param option Character who determine which function call
+* @return The number of printed characters
 */
 int select_print(va_list ap, char option)
 {

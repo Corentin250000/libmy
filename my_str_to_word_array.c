@@ -7,8 +7,12 @@
 
 #include "my.h"
 
-/*
-Return 0 if the character is unauthorized
+/**
+* @brief Determinate if the character c is a separator
+* @param c Character to analyse
+* @param unauthorized String who contain all separators
+* @return 0 if the character is a separator or 1 if the character is not a
+* separator.
 */
 int is_unauthorized(char c, char const *unauthorized)
 {
@@ -21,6 +25,13 @@ int is_unauthorized(char c, char const *unauthorized)
     return present;
 }
 
+/**
+* @brief Determinate the size of actual separator portion on string
+* @param str String to analyse
+* @param index Index of string to begin the analyse
+* @param unauthorized String who contain all separators
+* @return The size of the portion of separators (between two words)
+*/
 int size_not_word(char const *str, int index, char const *unauthorized)
 {
     for (; !is_unauthorized(str[index], unauthorized)
@@ -28,6 +39,13 @@ int size_not_word(char const *str, int index, char const *unauthorized)
     return index;
 }
 
+/**
+* @brief Count the number of words in the string to know how many memory place
+* the program must allocate.
+* @param str String to analyse
+* @param unauthorized String who contain all separators
+* @return The number of words
+*/
 int nb_word(char const *str, char const *unauthorized)
 {
     int nbr = is_unauthorized(str[0], unauthorized);
@@ -40,6 +58,13 @@ int nb_word(char const *str, char const *unauthorized)
     return nbr;
 }
 
+/**
+* @brief Determinate the size of actual word portion on string
+* @param str String to analyse
+* @param index Index of string to begin the analyse
+* @param unauthorized String who contain all separators
+* @return The size of the portion of word (between two separators)
+*/
 int size_word(char const *str, int index, char const *unauthorized)
 {
     int size = 0;
@@ -64,6 +89,13 @@ static char *fill_word(char const *str, int *index_str, int word_size)
     return word;
 }
 
+/**
+* @brief Separate a string into a string array who will contain all words
+* separated by separators characters
+* @param str String to analyse
+* @param unauthorized String who contain all separators
+* @return The string array or NULL in case of errors
+*/
 char **my_str_to_word_array(char const *str, char const *unauthorized)
 {
     int word_number = nb_word(str, unauthorized);

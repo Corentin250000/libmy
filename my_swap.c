@@ -7,6 +7,11 @@
 
 #include "my.h"
 
+/**
+* @brief Swap two int
+* @param a First int
+* @param b Second int
+*/
 void my_swap(int *a, int *b)
 {
     int temp_a = *a;

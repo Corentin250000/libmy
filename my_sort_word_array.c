@@ -7,6 +7,11 @@
 
 #include "my.h"
 
+/**
+* @brief Swap two string
+* @param a First string
+* @param b Second string
+*/
 void swap_str(char **a, char **b)
 {
     char *temp = *a;
@@ -15,6 +20,11 @@ void swap_str(char **a, char **b)
     *b = temp;
 }
 
+/**
+* @brief Verify if the array is sorted
+* @param tab String array to verify
+* @return 1 if array is sorted, 0 else.
+*/
 int verify_sort_char(char **tab)
 {
     for (int i = 1; tab[i] != NULL; i++) {
@@ -24,6 +34,10 @@ int verify_sort_char(char **tab)
     return 1;
 }
 
+/**
+* @brief Sort a string array with Bubble sort
+* @param tab Int array to verify
+*/
 int my_sort_word_array(char **tab)
 {
     for (int i = 1; !verify_sort_char(tab); i++) {

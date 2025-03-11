@@ -7,6 +7,11 @@
 
 #include "my.h"
 
+/**
+* @brief Put all upper letter to lower letter
+* @param str The string to change
+* @return The string changed
+*/
 char *my_strlowcase(char *str)
 {
     for (int i = 0; str[i] != '\0'; i++)

@@ -7,6 +7,12 @@
 
 #include "my.h"
 
+/**
+* @brief Duplicate the string
+* @param src Source string
+* @return The new string, or NULL if malloc has failed
+* @note A \0 is automatically added at the end of string
+*/
 char *my_strdup(char const *src)
 {
     int i = 0;

@@ -7,6 +7,12 @@
 
 #include "my.h"
 
+/**
+* @brief Add an upper letter on all beginning word, and lower letter on other
+* characters
+* @param str String to change
+* @return The string changed
+*/
 char *my_strcapitalize(char *str)
 {
     str = my_strupcase(str);

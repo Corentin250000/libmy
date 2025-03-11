@@ -7,6 +7,13 @@
 
 #include "my.h"
 
+/**
+* @brief Compare two strings
+* @param s1 First string to compare
+* @param s2 Second string to compare
+* @return 0 if both strings are exactly the same, else the difference, at same
+* index, between s1 and s2, like this: s1[index] - s2[index]
+*/
 int my_strcmp(char const *s1, char const *s2)
 {
     int i = 0;
