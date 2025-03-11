@@ -7,6 +7,12 @@
 
 #include "my.h"
 
+/**
+* @brief Calculate the power of a number by a power
+* @param nb the number
+* @param p the power
+* @return The power of nb by p (nb^p)
+*/
 int my_compute_power_it(int nb, int p)
 {
     int result = nb;

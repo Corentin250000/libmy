@@ -8,6 +8,12 @@
 #include "my.h"
 #include <limits.h>
 
+/**
+* @brief Calculate the number of minus '-' to determinate if the number is
+* negative
+* @param str String to analyse
+* @return 0 if the number is positive, 1 else
+*/
 int is_negative(char const *str)
 {
     int nb_minus = 0;
@@ -19,6 +25,11 @@ int is_negative(char const *str)
     return nb_minus % 2 == 0 ? 0 : 1;
 }
 
+/**
+* @brief Count the number of digit in string
+* @param str String to analyse
+* @return The number of digits
+*/
 int nb_digits_str(char const *str)
 {
     int nb_digits = 0;
@@ -32,6 +43,11 @@ int nb_digits_str(char const *str)
     return nb_digits;
 }
 
+/**
+* @brief Calculate the power of 10 according to nb_digits
+* @param nb_digits the number of digits
+* @return The power of ten
+*/
 int n_power_ten(int nb_digits)
 {
     int result = 1;
@@ -41,6 +57,13 @@ int n_power_ten(int nb_digits)
     return result;
 }
 
+/**
+* @brief Verify if the number doesn't make an underflow or an overflow before
+* being casted into an int
+* @param nb_before_verification Number to analyse
+* @param is_neg If the number is negative or not
+* @return 1 if nb underflow or overflow, 0 else.
+*/
 int verify_overflow(long long nb_before_verification, int is_neg)
 {
     if (is_neg)
@@ -51,6 +74,13 @@ int verify_overflow(long long nb_before_verification, int is_neg)
     return 0;
 }
 
+/**
+* @brief Get a number written in a string
+* @param str String to extract the number
+* @return The number or 0 in case of errors.
+* @warning The number in str must not give an underflow or an overflow on
+* result.
+*/
 int my_getnbr(char const *str)
 {
     int is_neg = is_negative(str);
