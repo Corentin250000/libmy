@@ -23,21 +23,25 @@ static void *replace_value(void *ptr, void *new_ptr, size_t previous_size)
     return new_ptr;
 }
 
-/*
-Reallocate the pointer to new size, copy previous data into the new pointer and
-free the old pointer.
-
-If ptr is NULL -> do a malloc of given size and return the new pointer.
-
-If size is inferior to 1 and ptr not NULL -> return old pointer and error
-variable is put at 1.
-
-In case of allocation error -> return old pointer and error variable is put
-at 1.
-
-If the function return NULL -> you must free yourself the pointer.
-
-The previous size parameter is the size of actual pointer (ptr).
+/**
+* @brief Reallocate the pointer to new size, copy previous data into the new
+* pointer and free the old pointer.
+* @param ptr Pointer to reallocate
+* @param new_size New size for the pointer
+* @param previous_size Actual size of ptr
+* @param error An address of int to know if there were any errors
+* @return the new pointer reallocated with previous pointer's data or, in case
+* of error, the unchanged ptr, with error put at 1.
+* @note If ptr is NULL -> do a malloc of given size and return the new pointer.
+*
+* @note If size is inferior to 1 and ptr not NULL -> return unchanged ptr and
+* error variable is put at 1.
+*
+* @note In case of allocation error -> return unchanged ptr and error variable
+* is put at 1.
+*
+* @note If the function return unchanged ptr -> you must free yourself the
+* pointer.
 */
 void *my_realloc(void *ptr, size_t new_size, size_t previous_size, int *error)
 {

@@ -7,28 +7,11 @@
 
 #include "my.h"
 
-/*
-Special case for my_put_nbr (not an integer when it's positive)
-Print -2147483648
-*/
-int special_case(void)
-{
-    my_putchar('-');
-    my_putchar('2');
-    my_putchar('1');
-    my_putchar('4');
-    my_putchar('7');
-    my_putchar('4');
-    my_putchar('8');
-    my_putchar('3');
-    my_putchar('6');
-    my_putchar('4');
-    my_putchar('8');
-    return 11;
-}
-
-/*
-Print the number in argument and return the number of digits of number
+/**
+* @brief Print the number to standard output in argument and return the number
+* of digits of number.
+* @param nb Number to print
+* @return The number of printed characters.
 */
 int my_put_nbr(int nb)
 {
@@ -36,7 +19,7 @@ int my_put_nbr(int nb)
     int nb_digits = 0;
 
     if (nb == -2147483648)
-        return special_case();
+        return write(1, "-2147483648", 11);
     else if (nb < 0) {
         nb_digits += my_putchar('-');
         nb = - nb;

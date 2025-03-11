@@ -30,7 +30,6 @@ int nb_digits_str(char const *str);
 int n_power_ten(int nb_digits);
 int verify_overflow(long long nb_before_verification, int is_neg);
 int my_getnbr(char const *str);
-int special_case(void);
 int my_put_nbr(int nb);
 int my_putchar(char c);
 int my_putstr(char const *str);

@@ -7,6 +7,13 @@
 
 #include "my.h"
 
+/**
+* @brief Determinate the maximum power (base^power) to determinate the size
+* of final string.
+* @param nb Number to change base
+* @param base Target base
+* @return The maximum power to be superior at nb
+*/
 int max_power(int nb, int base)
 {
     int result = 0;
@@ -17,6 +24,14 @@ int max_power(int nb, int base)
     return result;
 }
 
+/**
+* @brief Change a number written in base 10 into a number written in another
+* base.
+* @param nb Number to change base
+* @param base Target base
+* @return The string who contain the transformed number
+* @warning The base must be between 2 and 16.
+*/
 char *base10_to_base(int nb, int base)
 {
     unsigned int temp = nb < 0 ? - nb : nb;
@@ -40,6 +55,13 @@ char *base10_to_base(int nb, int base)
     return result;
 }
 
+/**
+* @brief Change a number written in base into a number written in base 10.
+* @param nb Number to transform into an int written in base 10
+* @param base Base from
+* @return The number converted
+* @warning The base must be between 2 and 16.
+*/
 int return_to_base10(char const *nb, int base)
 {
     int size = my_strlen(nb);
@@ -60,6 +82,15 @@ int return_to_base10(char const *nb, int base)
     return result * negative;
 }
 
+/**
+* @brief Change a number written in a certain base into a number written in
+* another base.
+* @param nbr String who contain the number to convert
+* @param base_from Base of number in the string
+* @param base_to Base of result number in the string
+* @return The string who contain the transformed number
+* @warning The base must be between 2 and 16.
+*/
 char *convert_base(char const *nbr, char const *base_from, char const *base_to)
 {
     int base_from_int = my_getnbr(base_from);

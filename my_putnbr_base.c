@@ -7,12 +7,23 @@
 
 #include "my.h"
 
+/**
+* @brief Print a string
+* @param str String to print
+* @return Number of printed characters
+*/
 int my_putstr(char const *str)
 {
     write(1, str, my_strlen(str));
     return my_strlen(str);
 }
 
+/**
+* @brief Calculate the power of a number
+* @param nb the number
+* @param p the power
+* @return The power of nb by p (nb^p)
+*/
 int power(int nb, int p)
 {
     int result = 1;
@@ -26,6 +37,13 @@ int power(int nb, int p)
     return result;
 }
 
+/**
+* @brief Determinate the maximum power (base^power) to determinate the size
+* of final string.
+* @param nb Number to change base
+* @param base Target base
+* @return The maximum power to be superior at nb
+*/
 int max_power_putnbr(int nb, int base)
 {
     int result = 0;
@@ -36,6 +54,14 @@ int max_power_putnbr(int nb, int base)
     return result;
 }
 
+/**
+* @brief Transform a number written in base 10 into a number written in another
+* base and print it to standard output.
+* @param nbr Number to change base
+* @param base Target base
+* @return 0
+* @warning The base must be between 2 and 16.
+*/
 int my_putnbr_base(int nbr, char const *base)
 {
     int base_int = my_getnbr(base);
