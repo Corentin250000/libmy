@@ -62,5 +62,8 @@ int verify_format(const char *format);
 int select_print(va_list ap, char option);
 int mini_printf(const char *format, ...);
 void *my_realloc(void *ptr, size_t new_size, size_t previous_size, int *error);
+char *create_string(unsigned int data);
+char *remove_zeros(char *nb, int size);
+char *int_to_char(unsigned int data);
 
 #endif
