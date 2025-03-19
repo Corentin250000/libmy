@@ -33,6 +33,8 @@ SRC	=	conversion_letter.c	\
 		mini_printf.c	\
 		my_strncpy.c	\
 		my_realloc.c	\
+		int_to_char.c	\
+		my_memcpy.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -47,7 +49,7 @@ all:	$(NAME)
 
 clean:
 		rm -f $(OBJ)
-		find . -type f -name '*~' -exec rm -f {} +
+		find . -type f -name '*~' -delete
 
 fclean:	clean
 		rm -f $(NAME)
