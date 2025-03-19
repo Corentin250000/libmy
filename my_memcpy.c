@@ -7,6 +7,14 @@
 
 #include "my.h"
 
+/**
+* @brief Copy the memory from src to dest
+* @param dest Destination pointer
+* @param src Source pointer
+* @param size Size of the content to copy
+* @note If src is NULL, the function quit before the copy,
+* so dest doesn't change
+*/
 void my_memcpy(void *dest, void *src, size_t size)
 {
     void *temp_dest = dest;
